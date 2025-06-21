@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 96%;
+    --foreground: 0 0% 0%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 0%;
+
+    --popover: 0 0% 98%;
+    --popover-foreground: 0 0% 0%;
+
+    --primary: 0 0% 0%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 94%;
+    --secondary-foreground: 0 0% 0%;
+
+    --muted: 0 0% 94%;
+    --muted-foreground: 0 0% 45%;
+
+    --accent: 0 0% 94%;
+    --accent-foreground: 0 0% 0%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 0%;
+    
+    --radius: 0.5rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-space-grotesk font-bold tracking-tight text-black;
+  }
+  
+  p, span, a, button, input, textarea {
+    @apply font-sans text-black;
+  }
+}
+
+@layer components {
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-black to-black/70;
+  }
+  
+  .gradient-border {
+    @apply relative;
+  }
+  
+  .gradient-border::before {
+    content: '';
+    @apply absolute inset-0 rounded-lg p-[1px] bg-gradient-to-r from-black/40 to-black/20 opacity-0 transition-opacity duration-300;
+    -webkit-mask: 
+      linear-gradient(#fff 0 0) content-box, 
+      linear-gradient(#fff 0 0);
+    mask:
+      linear-gradient(#fff 0 0) content-box, 
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+  }
+  
+  .gradient-border:hover::before {
+    @apply opacity-100;
+  }
+  
+  .gradient-bg {
+    @apply bg-black;
+  }
+  
+  .section-padding {
+    @apply px-4 py-20 md:py-40 md:px-8;
+  }
+  
+  .hero-text {
+    @apply text-4xl md:text-5xl lg:text-7xl font-bold text-black;
+  }
+  
+  .service-card {
+    @apply bg-white rounded-lg p-6 transition-all duration-300 hover:translate-y-[-5px] hover:shadow-lg hover:shadow-black/5;
+  }
+  
+  .portfolio-item {
+    @apply bg-white rounded-lg overflow-hidden transition-all duration-300 hover:translate-y-[-10px] hover:shadow-xl hover:shadow-black/10;
+  }
+  
+  /* New styles for light design */
+  .large-number {
+    @apply text-8xl font-bold font-space-grotesk opacity-15 text-black;
+  }
+  
+  .image-card {
+    @apply relative overflow-hidden rounded-lg;
+  }
+  
+  .image-card img {
+    @apply transition-transform duration-500 hover:scale-105;
+  }
+  
+  .image-card .overlay {
+    @apply absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6;
+  }
+  
+  .minimal-button {
+    @apply px-4 py-2 bg-black/5 hover:bg-black/10 rounded-full transition-all duration-300 inline-flex items-center gap-2 text-black;
+  }
+  
+  .section-title {
+    @apply text-4xl md:text-6xl font-bold mb-6 font-space-grotesk text-black;
+  }
+  
+  .section-description {
+    @apply text-xl text-black/70 mb-8 max-w-2xl;
+  }
+  
+  /* New background styles */
+  .hero-bg {
+    @apply bg-white;
+    position: relative;
+  }
+  
+  .hero-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, 
+      #f0f5ef 0%,
+      #FFF8F0 50%,
+      #B87333 100%
+    );
+    opacity: 0.35;
+    z-index: 0;
+  }
+  
+  .grid-bg {
+    position: relative;
+    background-color: #ffffff;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .text-shadow {
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  }
+  
+  .mask-gradient-bottom {
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0));
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0));
+  }
+  
+  .hover-scale {
+    @apply transition-transform duration-300 hover:scale-[1.02];
+  }
+  
+  .animate-draw-underline {
+    @apply after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-black after:transition-all after:duration-300 hover:after:w-full;
+  }
+}
+
+@keyframes scroll-infinite {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-scroll-infinite {
+  animation: scroll-infinite 30s linear infinite;
+}
+
+@keyframes slide-up {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.animate-slide-up {
+  animation: slide-up 0.3s ease forwards;
+}
