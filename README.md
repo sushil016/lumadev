@@ -1,73 +1,108 @@
-# Welcome to your Lovable project
+# Lumadev - MVP Agency & Product Development
 
-## Project info
+## About Lumadev
 
-**URL**: https://lovable.dev/projects/0b79a781-a546-4e5c-bab2-e254ed9a302f
+Lumadev is a full-service digital agency specializing in MVP (Minimum Viable Product) development and product strategy. We help startups and businesses bring their ideas to life with rapid prototyping, user-centered design, and scalable development solutions.
 
-## How can I edit this code?
+## Our Services
 
-There are several ways of editing your application.
+- **MVP Development**: Rapid prototyping and development of minimum viable products
+- **Product Strategy**: Market research, user experience design, and product roadmapping
+- **Web & Mobile Development**: Custom applications built with modern technologies
+- **UI/UX Design**: User-centered design that drives engagement and conversion
+- **Technical Consulting**: Architecture planning and technology stack recommendations
 
-**Use Lovable**
+## Technology Stack
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/0b79a781-a546-4e5c-bab2-e254ed9a302f) and start prompting.
+This project is built with modern, scalable technologies:
 
-Changes made via Lovable will be committed automatically to this repo.
+- **Frontend**: React with TypeScript for type-safe development
+- **Styling**: Tailwind CSS for rapid, responsive design
+- **UI Components**: shadcn/ui for consistent, accessible components
+- **Build Tool**: Vite for fast development and optimized builds
+- **Backend**: Node.js with Prisma ORM for database management
 
-**Use your preferred IDE**
+## Getting Started
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Prerequisites
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+- Node.js (v18 or higher)
+- npm or yarn package manager
 
-Follow these steps:
+### Installation
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+# Clone the repository
+git clone https://github.com/sushil016/lumadev.git
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# Navigate to the project directory
+cd lumadev
 
-# Step 3: Install the necessary dependencies.
-npm i
+# Install dependencies
+npm install
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start the development server
 npm run dev
+
+#navigate to backend dir
+cd backend
+
+npm install
+
+
 ```
 
-**Edit a file directly in GitHub**
+The frontend application will be available at `http://localhost:5173`
+The backend application will be available at `http://localhost:3001`
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
 
-**Use GitHub Codespaces**
+### Building for Production
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+```sh
+# Build the project for production
+npm run build
 
-## What technologies are used for this project?
+# Preview the production build
+npm run preview
+```
 
-This project is built with:
+## Project Structure
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+```
+lumadev/
+|--backend
+├── src/
+│   ├── components/     # Reusable UI components
+│   ├── pages/         # Page components
+│   ├── hooks/         # Custom React hooks
+│   └── lib/           # Utility functions and configurations
+├── public/            # Static assets
+├── backend/           # Backend API and database
+└── docs/             # Documentation
+```
 
-## How can I deploy this project?
+## Development
 
-Simply open [Lovable](https://lovable.dev/projects/0b79a781-a546-4e5c-bab2-e254ed9a302f) and click on Share -> Publish.
+### Code Style
 
-## Can I connect a custom domain to my Lovable project?
+- TypeScript for type safety
+- ESLint for code linting
+- Prettier for code formatting
+- Tailwind CSS for styling
 
-Yes, you can!
+### Available Scripts
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build
+- `npm run lint` - Run ESLint
+- `npm run type-check` - Run TypeScript type checking
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+## Contact
+
+Ready to build your MVP? Let's discuss your project:
+
+- **Website**: [lumadev.com](https://lumadev.com)
+- **Email**: sushilsahani322@gmail.com
+- **Schedule a Call**: [Cal.com](https://cal.com/lumadev)
+
